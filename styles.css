@@ -17,6 +17,18 @@
     grid-template-rows: 3rem auto;
     color: white;
   }
+
+  h2 {
+    color: #ffffff;
+    text-align: center;
+  }
+
+  #question {
+    color: #6f0ea7;
+    height: 32px;
+    width: 50%;
+
+  }
   
   .flex-ctr {
     display: flex;
@@ -29,17 +41,50 @@
     justify-content: space-around;
     align-items: center;
   }
+
+   
+  nav a {
+    line-height: 3rem;
+    padding: 0 1rem;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: white;
+  }
+  
+  #top-menu a:hover {
+    background-color: var(--sub-menu-bg);
+  }
+
+  header, #top-menu {
+    position: relative;
+  }
+  #top-menu {
+    z-index: 20;
+  }
+  #sub-menu {
+    width: 100%;
+    z-index: 10;
+    transition: top 0.5s ease-out;
+  }
+  #sub-menu a:hover {
+    background-color: var(--top-menu-bg);
+  }
+  nav a.active {
+    background-color: var(--sub-menu-bg);
+    color: var(--main-bg);
+  }
   
   button {
     font-size: 18px;
     padding: 5px 10px;
-    border: 1px solid black;
+    background-color: #6f0ea7;
+    color: #deedf2;
     border-radius: 5px;
     cursor: pointer;
   }
   
   button:hover {
-    border-color: #6f0ea7;
+    color: #6f0ea7;
     background-color: #deedf2;
   }
   

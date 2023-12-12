@@ -19,6 +19,8 @@ for (let i = 0; i < menuLinks.length; i++) {
     topMenuEl.innerHTML += `<a href=${menuLinks[i].href}>${menuLinks[i].text}</a>`;
 }
 
+// main element
+
 const mainEl = document.querySelector('main')
 console.log(mainEl);
 
@@ -36,6 +38,8 @@ const questionInput = document.getElementById('question');
 const button = document.getElementById('button');
 const inputsec = document.getElementById('inputsec');
 const prompt1 = document.querySelector('h2');
+
+prompt1.classList.add("flex-ctr");
 
 form.classList.add("flex-ctr");
 inputsec.style.background = 'var(--main-bg)';
@@ -55,45 +59,55 @@ document.getElementById("button").addEventListener("click", windowAlert);
 
 // function for random outputs
 
-let randomNumber = Math.floor(Math.random() * 8)
-let eightball = '';
+// switch statement didn't work
+// let randomNumber = Math.floor(Math.random() * 8)
+// let eightball = '';
 
-switch (randomNumber){
-  case '0' :
-    eightball = 'It is certain';
-    break;
-  case '1' :
-    eightball = 'It is decidedly so';
-    break;
-  case '2' :
-    eightball = 'Repy is hazy try again';
-    break
-  case '3' :
-    eightball = 'Cannot predict now';
-    break;
-  case '4' :
-    eightball = 'Do not count on it';
-    break;
-  case '5' :
-    eightball = 'My sources say no';
-    break;
-  case '6' :
-    eightball = 'Outlook not so good';
-    break;
-  case '7' :
-    eightball = 'Signs point to yes';
-    break;
-  default :
-    eightball = 'yes';
-    break;
-}
+// switch (randomNumber){
+//   case '0' :
+//     eightball = 'It is certain';
+//     break;
+//   case '1' :
+//     eightball = 'It is decidedly so';
+//     break;
+//   case '2' :
+//     eightball = 'Repy is hazy try again';
+//     break
+//   case '3' :
+//     eightball = 'Cannot predict now';
+//     break;
+//   case '4' :
+//     eightball = 'Do not count on it';
+//     break;
+//   case '5' :
+//     eightball = 'My sources say no';
+//     break;
+//   case '6' :
+//     eightball = 'Outlook not so good';
+//     break;
+//   case '7' :
+//     eightball = 'Signs point to yes';
+//     break;
+//   default :
+//     eightball = 'yes';
+//     break;
+// }
 
-console.log(`The magic eightball said : ${eightball}.`)
+// console.log(`The magic eightball said : ${eightball}.`)
+
+const eightball = ['It is certain', 'It is decidedly so', 'Reply is hazy try again', 'Cannot predict now', 'Do not count on it', 'My sources say no', 'Outlook not so good', 'Signs point to yes', 'yes']
+// console.log(eightball[Math.floor(Math.random() * 8)])
+
+const random = () => {
+const output = eightball[Math.floor(Math.random() * 8)];
+console.log(output);
+};
+random()
 
 function windowAlert() {
     answer = window.alert(
      // need to make a function with a switch statement 
-     console.log(`The magic eightball said : ${eightball}.`)
+      `${eightball[Math.floor(Math.random() * 8)]}`
     );
     myWindow.focus();
   }
